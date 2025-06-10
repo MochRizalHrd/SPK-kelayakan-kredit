@@ -22,6 +22,12 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/pembobotan') ?>">
+            <i class="fas fa-balance-scale"></i>
+            <span>Pembobotan Nilai Kriteria</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?= base_url('/rating_nilai') ?>">
             <i class="fas fa-fw fa-star"></i>
             <span>Rating Kecocokan Nilai</span>
