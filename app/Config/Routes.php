@@ -15,3 +15,9 @@ $routes->get('kriteria', 'Kriteria::view');
 $routes->post('addKriteria', 'Kriteria::add');
 $routes->post('editKriteria/(:any)', 'Kriteria::editKriteria/$1');
 $routes->get('deleteKriteria/(:any)', 'Kriteria::delete/$1');
+
+// Data Konsumen
+$routes->get('konsumen', 'Konsumen::view');
+$routes->post('addKonsumen', 'Konsumen::add');
+$routes->post('editKonsumen/(:any)', 'Konsumen::editKonsumen/$1');
+$routes->get('deleteKonsumen/(:any)', 'Konsumen::delete/$1');
