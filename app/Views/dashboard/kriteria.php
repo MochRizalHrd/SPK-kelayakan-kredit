@@ -1,6 +1,7 @@
 <?= $this->extend('layout/template') ?>
 <?= $this->section('content') ?>
 
+<h5 class="mb-3"><?= esc($title) ?></h5>
 <div class="row">
     <div class="col">
         <div class="card card-small mb-4">

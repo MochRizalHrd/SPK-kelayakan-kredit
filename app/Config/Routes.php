@@ -27,3 +27,9 @@ $routes->get('pembobotan', 'Pembobotan::view');
 $routes->post('addPembobotan', 'Pembobotan::add');
 $routes->post('editPembobotan/(:any)', 'Pembobotan::editPembobotan/$1');
 $routes->get('deletePembobotan/(:any)', 'Pembobotan::deletePembobotan/$1');
+
+// Rating Kecocokan Nilai
+$routes->get('rating_nilai', 'Rating::view');
+$routes->post('addRating', 'Rating::add');
+$routes->post('editRating/(:any)', 'Rating::editRating/$1');
+$routes->get('deleteRating/(:any)', 'Rating::deleteRating/$1');

@@ -8,8 +8,9 @@
 
             <li class="list-group-item d-flex justify-content-between align-items-center px-3">
                 <!-- <span class="font-weight-bold">Data Kriteria</span> -->
-                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#dataPembobotanModal">
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#dataRatingModal">
                     <i class="fas fa-plus"></i> Add Data
+
                 </button>
             </li>
 
@@ -20,32 +21,44 @@
                             <tr>
                                 <th scope="col" class="border-0">No</th>
                                 <th scope="col" class="border-0">Kode</th>
-                                <th scope="col" class="border-0">Keterangan</th>
-                                <th scope="col" class="border-0">Bobot</th>
+                                <th scope="col" class="border-0">Nama Konsumen</th>
+                                <th scope="col" class="border-0">Kelayakan Usaha</th>
+                                <th scope="col" class="border-0">Riwayat Kredit</th>
+                                <th scope="col" class="border-0">Potensi Pendapatan</th>
+                                <th scope="col" class="border-0">Jaminan</th>
+                                <th scope="col" class="border-0">Analisis Pasar</th>
                                 <th scope="col" class="border-0">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($pembobotan as $pem) : ?>
+                            foreach ($rating as $rtg) : ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
-                                    <td><?= esc($pem['id']) ?></td>
-                                    <td><?= esc($pem['keterangan']) ?></td>
-                                    <td><?= esc($pem['bobot']) ?></td>
+                                    <td><?= esc($rtg['id']) ?></td>
+                                    <td><?= esc($rtg['nama']) ?></td>
+                                    <td><?= esc($rtg['kelayakan_usaha']) ?></td>
+                                    <td><?= esc($rtg['riwayat_kredit']) ?></td>
+                                    <td><?= esc($rtg['potensi_pendapatan']) ?></td>
+                                    <td><?= esc($rtg['jaminan']) ?></td>
+                                    <td><?= esc($rtg['analisis_pasar']) ?></td>
                                     <td>
                                         <div class="btn-group btn-group-sm">
                                             <button class="btn btn-sm btn-warning"
-                                                onclick="openEditPembobotanModal(this)"
-                                                data-id="<?= $pem['id'] ?>"
-                                                data-keterangan="<?= esc($pem['keterangan']) ?>"
-                                                data-bobot="<?= esc($pem['bobot']) ?>">
+                                                onclick="openEditRatingModal(this)"
+                                                data-id="<?= $rtg['id'] ?>"
+                                                data-nama="<?= esc($rtg['nama']) ?>"
+                                                data-kelayakan_usaha="<?= esc($rtg['kelayakan_usaha']) ?>"
+                                                data-riwayat_kredit="<?= esc($rtg['riwayat_kredit']) ?>"
+                                                data-potensi_pendapatan="<?= esc($rtg['potensi_pendapatan']) ?>"
+                                                data-jaminan="<?= esc($rtg['jaminan']) ?>"
+                                                data-analisis_pasar="<?= esc($rtg['analisis_pasar']) ?>">
                                                 Edit
                                             </button>
 
                                             <a href="javascript:void(0);"
                                                 class="btn btn-danger"
-                                                onclick="deletePembobotan(<?= $pem['id'] ?>)">
+                                                onclick="deleteRating(<?= $rtg['id'] ?>)">
                                                 Delete
                                             </a>
                                         </div>
@@ -76,11 +89,8 @@
     </div>
 </div>
 
-
-
-
 <!-- Modal include -->
-<?= $this->include('modals/pembobotan_modal') ?>
+<?= $this->include('modals/rating_modal') ?>
 
 <!-- sweetalert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -109,10 +119,10 @@
 <?php endif; ?>
 
 <script>
-    function deletePembobotan(id) {
+    function deleteRating(id) {
         Swal.fire({
             title: 'Yakin ingin menghapus?',
-            text: "Data pembobotan nilai kriteria yang dihapus tidak bisa dikembalikan.",
+            text: "Data rating kecocokan nilai yang dihapus tidak bisa dikembalikan.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
@@ -122,10 +132,10 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redirect ke route delete
-                window.location.href = "<?= base_url('deletePembobotan') ?>/" + id;
+                window.location.href = "<?= base_url('deleteRating') ?>/" + id;
             }
         });
     }
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection() ?>
