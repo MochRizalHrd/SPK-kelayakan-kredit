@@ -7,11 +7,14 @@
         <div class="card card-small mb-4">
 
             <li class="list-group-item d-flex justify-content-between align-items-center px-3">
-                <!-- <span class="font-weight-bold">Data Kriteria</span> -->
-                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#dataKriteriaModal">
-                    <i class="fas fa-plus"></i> Add Data
-
-                </button>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#dataKriteriaModal">
+                        <i class="fas fa-plus"></i> Add Data
+                    </button>
+                    <a href="<?= base_url('/ahp/bobot_ahp') ?>" class="btn btn-sm btn-primary mx-2">
+                        <i class="fas fa-balance-scale"></i> Bobot Preferensi AHP
+                    </a>
+                </div>
             </li>
 
             <div class="card-body p-0 pb-3">

@@ -14,7 +14,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title fw-bold d-flex align-items-center gap-2" id="dataModalLabel">
+                <h5 class="modal-title fw-bold d-flex align-items-center gap-2" id="dataModalLabel"  onclick="openAddKriteria()">
                     Add Kriteria / Edit Kriteria
                 </h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">

@@ -19,7 +19,7 @@ class Konsumen extends BaseController
     {
         $data = [
             'konsumen' => $this->konsumenModel->findAll(),
-            'title' => 'Data Konsumen'
+            'title' => 'Data Alternatif'
         ];
         return view('dashboard/konsumen', $data);   // Kirim ke view
     }

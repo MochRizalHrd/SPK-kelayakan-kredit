@@ -18,7 +18,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('/konsumen') ?>">
             <i class="fas fa-fw fa-users"></i>
-            <span>Data Konsumen</span>
+            <span>Data Alternatif</span>
         </a>
     </li>
     <li class="nav-item">
@@ -34,9 +34,15 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/perhitungan') ?>">
+        <a class="nav-link" href="<?= base_url('/dataperangkingan') ?>">
             <i class="fas fa-fw fa-calculator"></i>
-            <span>Perhitungan</span>
+            <span>Data Perhitungan</span>
+        </a>
+    </li>
+     <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/hasilakhir') ?>">
+            <i class="fas fa-fw fa-calculator"></i>
+            <span>Data Hasil Akhir</span>
         </a>
     </li>
     <li class="nav-item">

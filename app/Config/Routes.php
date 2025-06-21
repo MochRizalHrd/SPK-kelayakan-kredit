@@ -8,6 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 
 //First time loaded
 $routes->get('/', 'Kriteria::view');
+$routes->get('/login', 'AuthController::view');
+
 
 
 // Data Kriteria
@@ -33,3 +35,13 @@ $routes->get('rating_nilai', 'Rating::view');
 $routes->post('addRating', 'Rating::add');
 $routes->post('editRating/(:any)', 'Rating::editRating/$1');
 $routes->get('deleteRating/(:any)', 'Rating::deleteRating/$1');
+
+//AHP
+$routes->get('/ahp/bobot_ahp', 'AHPController::view');
+$routes->post('/ahp/simpan', 'AHPController::simpan');
+$routes->get('/ahp/reset', 'AHPController::reset');
+$routes->get('/ahp/cekkonsistensi', 'AHPController::cekKonsistensi');
+
+// Perhitungan
+$routes->get('/dataperangkingan', 'Perhitungan::view');
+$routes->get('/hasilakhir', 'Perhitungan::hasil');
