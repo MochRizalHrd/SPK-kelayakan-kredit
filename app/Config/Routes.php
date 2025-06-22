@@ -6,9 +6,14 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-//First time loaded
-$routes->get('/', 'Kriteria::view');
 $routes->get('/login', 'AuthController::view');
+$routes->post('/loginProcess', 'AuthController::loginProcess');
+$routes->get('/logout', 'AuthController::logout');
+
+$routes->group('', ['filter' => 'auth'], function($routes) {
+//First time loaded
+$routes->get('/kriteria', 'Kriteria::view');
+$routes->get('/', 'Home::index');
 
 
 
@@ -43,5 +48,7 @@ $routes->get('/ahp/reset', 'AHPController::reset');
 $routes->get('/ahp/cekkonsistensi', 'AHPController::cekKonsistensi');
 
 // Perhitungan
-$routes->get('/dataperangkingan', 'Perhitungan::view');
+$routes->get('/perhitungan', 'Perhitungan::view');
 $routes->get('/hasilakhir', 'Perhitungan::hasil');
+
+});

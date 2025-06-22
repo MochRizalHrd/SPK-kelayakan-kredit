@@ -70,7 +70,7 @@
             <div class="logo-text">Sistem Rekomendasi Pemberian Pinjaman</div>
             <h4 class="login-title text-center">Login Pengguna</h4>
 
-            <form action="<?= base_url('/login') ?>" method="post">
+            <form action="<?= base_url('/loginProcess') ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="mb-3">
                     <label for="username" class="form-label">Email</label>

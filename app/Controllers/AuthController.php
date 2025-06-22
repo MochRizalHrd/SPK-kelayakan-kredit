@@ -18,7 +18,7 @@ class AuthController extends BaseController
         if ($username === 'admin' && $password === 'admin123') {
             session()->set('logged_in', true);
             session()->set('username', $username);
-            return redirect()->to('/dashboard');
+            return redirect()->to('/');
         } else {
             return redirect()->to('/login')->with('error', 'Username atau password salah.');
         }

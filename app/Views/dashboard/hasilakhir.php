@@ -1,74 +1,29 @@
 <?= $this->extend('layout/template') ?>
 <?= $this->section('content') ?>
 
-<style>
-    table.wp-ranking {
-        border-collapse: collapse;
-        width: 50%;
-        margin-top: 30px;
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-
-    table.wp-ranking th,
-    table.wp-ranking td {
-        border: 1px solid #000;
-        padding: 8px;
-    }
-
-    table.wp-ranking th {
-        background-color: #d9ead3; /* Hijau pucat */
-        font-weight: bold;
-    }
-
-    table.wp-ranking .total-row {
-        font-weight: bold;
-        background-color: #f2f2f2;
-    }
-</style>
-
-<h3 class="mb-4">Hasil Ranking WP</h3>
-
-<table class="wp-ranking">
+<h3>Hasil Perhitungan Nilai V dan Ranking</h3>
+<table class="table table-bordered">
     <thead>
         <tr>
-            <th>Kode</th>
-            <th>V</th>
-            <th>Ranking</th>
+            <th>Peringkat</th>
+            <th>Alternatif</th>
+            <th>Nilai V</th>
+            <th>Keputusan</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>A1</td>
-            <td>0,2157792708</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>A2</td>
-            <td>0,2094470872</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>A3</td>
-            <td>0,1893539355</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>A4</td>
-            <td>0,1583860897</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>A5</td>
-            <td>0,2270336169</td>
-            <td>1</td>
-        </tr>
-        <tr class="total-row">
-            <td>Jumlah</td>
-            <td>1</td>
-            <td></td>
-        </tr>
+        <?php $no = 1; foreach ($rangking as $r): ?>
+            <tr>
+                <td><?= $no++ ?></td>
+                <td><?= $r['nama'] ?></td>
+                <td><?= number_format($r['nilai'], 6) ?></td>
+                <td><?= $r['nilai'] >= 0.2400 ? 'Layak' : 'Tidak Layak' ?></td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
+
+<a href="<?= base_url('/perhitungan') ?>" class="btn btn-secondary">← Kembali ke Perhitungan</a>
+
 
 <?= $this->endSection() ?>
